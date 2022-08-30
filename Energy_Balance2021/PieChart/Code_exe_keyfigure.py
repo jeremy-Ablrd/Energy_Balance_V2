@@ -36,7 +36,7 @@ print(value_percent)
 
 # Config pie chart
 colors_share = ['Teal', '#a3b825','#fad335']
-gap = (0.25, 0, 0)
+gap = (0.15, 0, 0)
 
 # ---------------- CALL FUNCTION ---------------- #
 
@@ -47,7 +47,7 @@ figure(12, 9)
 pie_chart(value_percent, energy_key, colors_share, gap)
 
 # Call function print_text(x, y, txt, fontsize, color, verti_align, horiz_align, bbox=None)
-print_text(0.5, 1.2, str(value_percent[0]) + "%", 37, "black", 'top', 'center')         #Fuel oil
+print_text(0.6, 1.2, str(value_percent[0]) + "%", 37, "black", 'top', 'center')         #Fuel oil
 print_text(2.5, 1.4, str(value_percent[1]) + "%", 25, "black", 'top', 'center')         #Wind
 print_text(2.5, 1.25, str(value_percent[2]) + "%", 25, "black", 'top', 'center',)       #Solar
 

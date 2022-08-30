@@ -1,34 +1,36 @@
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-import numpy as np
 import pandas as pd
-import seaborn as sns
-from matplotlib import patches
+import numpy as np
+from Function_PieChart_Electricity_Gen import *
+from Function_PieChart_PEC_FEC import *
 
+# -------  Config for SECTORIAL ENERGY CONSUMPTION ------- #
 
- #########       GENERATE FIGURE         ##########
+# Build DataFrame
+data = {'Domestic': 138745369,
+        'Industry & Commercial': 207422855,
+        'Government': 55489598 - 1019437,
+        'Street Lights':  1019437}
 
-fig = plt.figure(figsize=(12,9))
+df = pd.DataFrame(data)
 
- #########      GENERATE DATAFRAME (PIE CHART)  #########
-
-#1st Pie Chart
-Energies1 = '','','',''
+print(df)
+# 1st Pie Chart
+sectors = 'Domestic', '', '', ''
 Generation1 = [52.3, 35.1, 12.4, 0.8]
 Colors1 = ['#00b386', '#269393', '#ffb833', '#fff180']
 explode1 = (0, 0, 0, 0)
 
  #########      GENERATE GRAPHIQUE      ##########
 
-plt.pie(x=Generation1, labels=Energies1, colors=Colors1,
-        labeldistance=1.1, #or None
-        #explode=explode1,
-        autopct=None, #or None
-        shadow=False, startangle=-0, counterclock=False, frame=False,
-       #center=(1.2,1.2),
-        wedgeprops = { 'linewidth' : 1, 'edgecolor' : 'white' },
-        textprops = {'fontsize': 13, 'color': 'black'},
-        )
+# plt.pie(x=Generation1, labels=Energies1, colors=Colors1,
+#         labeldistance=1.1, #or None
+#         #explode=explode1,
+#         autopct=None, #or None
+#         shadow=False, startangle=-0, counterclock=False, frame=False,
+#        #center=(1.2,1.2),
+#         wedgeprops = { 'linewidth' : 1, 'edgecolor' : 'white' },
+#         textprops = {'fontsize': 13, 'color': 'black'},
+#         )
 
 #plt.title('Store Inventory')
 #plt.ylabel('Product')
