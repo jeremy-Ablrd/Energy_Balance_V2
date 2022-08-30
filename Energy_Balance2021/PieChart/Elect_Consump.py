@@ -11,32 +11,27 @@ data = {'Domestic': 138745369,
         'Government': 55489598 - 1019437,
         'Street Lights':  1019437}
 
-df = pd.DataFrame(data)
-
+df = pd.DataFrame(data.values(), index=data.keys(), columns=['TOE'])
+df = df.sort_values('TOE', ascending=False)
 print(df)
+
 # 1st Pie Chart
-sectors = 'Domestic', '', '', ''
-Generation1 = [52.3, 35.1, 12.4, 0.8]
-Colors1 = ['#00b386', '#269393', '#ffb833', '#fff180']
+sectors = df.index.tolist()
+generation = df['TOE']
+colors1 = ['#00b386', '#269393', '#ffb833', '#fff180']
 explode1 = (0, 0, 0, 0)
+label_dist = 1.1
+wedge = {'linewidth': 1, 'edgecolor': 'white' }
+text = {'fontsize': 13, 'color': 'black'}
+print(sectors)
+print(generation)
 
- #########      GENERATE GRAPHIQUE      ##########
+# ------- GENERATE GRAPHIQUE ------- #
 
-# plt.pie(x=Generation1, labels=Energies1, colors=Colors1,
-#         labeldistance=1.1, #or None
-#         #explode=explode1,
-#         autopct=None, #or None
-#         shadow=False, startangle=-0, counterclock=False, frame=False,
-#        #center=(1.2,1.2),
-#         wedgeprops = { 'linewidth' : 1, 'edgecolor' : 'white' },
-#         textprops = {'fontsize': 13, 'color': 'black'},
-#         )
+figure(12, 9)
+pie_chart(generation, None, colors1, explode1, label_dist, wedge, text)
 
-#plt.title('Store Inventory')
-#plt.ylabel('Product')
-#plt.xlabel('Quantity')
+# ------- SAVE FIGURE ------- #
 
- ########       SAVE FIGURE     ##########
-
-#plt.savefig('Elect_Consump.png', transparent=True, dpi=300)
+plt.savefig('Elect_Consump.png', transparent=True, dpi=300)
 plt.show()
