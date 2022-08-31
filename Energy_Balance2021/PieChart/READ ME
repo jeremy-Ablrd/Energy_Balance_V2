@@ -1,0 +1,14 @@
+# --------- Content of the folder --------- #
+
+In this Folder contain different file (.py, .png)
+For file .py :
+- Code_exe_ : are execute file for take chart.
+- Function_PieChart_ : are function and class for create chart (here pie chart) import in Code_exe_.
+For file .png :
+- Chart as an image, product by Code_exe_
+
+# --------- How to execute --------- #
+
+Run Code_exe only.
+
+

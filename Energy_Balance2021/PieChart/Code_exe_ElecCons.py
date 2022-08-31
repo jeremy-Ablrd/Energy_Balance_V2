@@ -33,5 +33,5 @@ pie_chart(generation, None, colors1, explode1, label_dist, wedge, text)
 
 # ------- SAVE FIGURE ------- #
 
-plt.savefig('Elect_Consump.png', transparent=True, dpi=300)
+plt.savefig('Elect_Consump2021.png', transparent=True, dpi=300)
 plt.show()
