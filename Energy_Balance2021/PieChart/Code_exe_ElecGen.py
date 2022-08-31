@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from Function_PieChart_Electricity_Gen import *
 
-#-------  CHART FOR KEY FIGURE ELECTRICITY ------- #
+#-------  CHART FOR ELECTRICITY GENERATION ------- #
 
 # Read .xlsx (excel file) ; sheet_name = "Electricity Stat-2021"
 path = "C:/Users/jerem/PycharmProjects/pythonProject/Infography/Energy_Balance2021/Seychelles Energy Balance For 2021 - ver2 2.xlsx"
@@ -25,7 +25,7 @@ for i in share.values:
     share_percent.append(round(i*100, 1))
 share_percent = np.array(share_percent)
 
-# ------------- CONFIG DATA  ------------- #
+# ------------- CONFIG DATA FOR CHART ------------- #
 
 # Config chart
 colors_share = ['Teal', '#42a1a1', '#a3b825','#fad335']
