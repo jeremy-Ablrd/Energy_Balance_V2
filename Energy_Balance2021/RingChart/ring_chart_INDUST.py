@@ -1,4 +1,3 @@
-# library
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from matplotlib.offsetbox import TextArea, DrawingArea, OffsetImage, AnnotationBbox
@@ -23,8 +22,8 @@ pie1 = plt.pie(x=Generation2, labels=Energies2, labeldistance=None, colors=Color
         )
 
 # add a circle at the center to transform it in a donut chart
-my_circle2=plt.Circle((0,0), 0.7, color='white')
-p=plt.gcf()
+my_circle2 = plt.Circle((0,0), 0.7, color='white')
+p = plt.gcf()
 p.gca().add_artist(my_circle2)
 
 plt.axis('equal')

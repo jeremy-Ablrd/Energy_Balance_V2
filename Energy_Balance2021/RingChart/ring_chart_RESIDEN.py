@@ -7,7 +7,7 @@ from matplotlib.offsetbox import TextArea, DrawingArea, OffsetImage, AnnotationB
 fig = plt.figure(figsize=(12,9))
 
 ######SERVICE######
-Energies2 = 'Electricity','LPG','Solar water, charcoal & woodfuel, kerosene'
+Energies2 = 'Electricity','LPG','Solar water', 'charcoal & woodfuel', 'kerosene'
 Generation2 = [74, 25, 1]
 Colors2 = ['#52A8A8', '#A3B825', '#ffc966']
 explode2 = (0.001, 0.01, 0.01)

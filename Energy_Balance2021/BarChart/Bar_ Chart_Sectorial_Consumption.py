@@ -81,5 +81,5 @@ for i in ax.patches[4:5]:
              fontsize=15, fontweight='bold',
              color='black')
 
-plt.savefig('Sectorial_Consump.png', transparent=True, dpi=300)
+plt.savefig('Sectorial_Consump2021.png', transparent=True, dpi=300)
 plt.show()
