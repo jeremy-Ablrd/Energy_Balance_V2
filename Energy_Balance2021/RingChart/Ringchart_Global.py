@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
-import csv
 
 # Call file
 # from file create DataFrame "df"
@@ -23,12 +21,13 @@ rename_columns = df.rename(columns={'Prod. (+)                 Cons. (-)': 'Elec
                                     'Prod. (+)                 Cons. (-).1': 'Solar Water Heater'}, inplace=True)
 
 
+# ----------------- ALL FUNCTION ----------------- #
 def create_data_sector(sectors: list,):
     # Drop NaN rows and take only values
     index_series = []
     list_series = []
     for sector in sectors:
-        series = df.loc[sector].dropna(axis=0)
+        series = df.loc[sector].dropna(axis=0)      # delete value NaN
         index_ = []
         list_ = []
         for index in series.index:
@@ -39,7 +38,7 @@ def create_data_sector(sectors: list,):
         list_series.append(value_percent(list_))
     return index_series, list_series
 
-# change the data in percentage
+
 def value_percent(shares: list):
     share_percent = []
     for each_share in shares:
@@ -48,70 +47,99 @@ def value_percent(shares: list):
     return share_percent
 
 
-SECTORS = ['Residential',
-           # 'Service', 'Industry'
-           ]
-index_global, energy_global = create_data_sector(SECTORS)        # call of function
-print("Index Global:", index_global)
-print("Energy Sector:", energy_global)
-colors = ['#52A8A8', '#A3B825', '#ffc966']
+def simplified_dataframe(dataframe: DataFrame):
+    dict_kfs = {}
+    dict_gas = {}
+    for i in dataframe.index:
+        if i == "Gasoil":
+            dict_gas[i] = dataframe.loc[i]
+            dataframe.drop(axis=0, labels=i, inplace=True)
+        elif i == "Gasoline":
+            dict_gas[i] = dataframe.loc[i]
+            dataframe.drop(axis=0, labels=i, inplace=True)
+        if i == "Solar Water Heater":
+            dict_kfs[i] = dataframe.loc[i]
+            dataframe.drop(axis=0, labels=i, inplace=True)
+        elif i == "Fuelwood & charcoal":
+            dict_kfs[i] = dataframe.loc[i]
+            dataframe.drop(axis=0, labels=i, inplace=True)
+        elif i == "Kerosene":
+            dict_kfs[i] = dataframe.loc[i]
+            dataframe.drop(axis=0, labels=i, inplace=True)
 
-# Create figure
+    if dict_gas:
+        # ------- Sum of Gasoil and Gasoline ------- #
+        dict_df1 = pd.DataFrame(dict_gas).T
+        somme_gas = dict_df1.iloc[:].sum(axis=0)
+        # make somme to a Series :
+        somme_gas = pd.DataFrame(somme_gas, columns=['Sum Gas']).T
+        df_gas = pd.concat([dataframe, somme_gas], join='inner')
+        return df_gas
+    # ------- Sum of solar, fuelwood, Kerosene ------- #
+    dict_df2 = pd.DataFrame(dict_kfs).T
+    somme_kfs = dict_df2.iloc[:].sum(axis=0)
+    # make somme to a Series :
+    somme_kfs = pd.DataFrame(somme_kfs, columns=['Sum K.F.S']).T
+    df_kfs = pd.concat([dataframe, somme_kfs], join='inner')
+    return df_kfs
 
 
-# create data
-def chart(x, label, color=None):
+def assign_color(dataframe: DataFrame):
+    colors = []
+    for i in dataframe.index:
+        if i == "Electricity":
+            assign = '#F1C40F'
+            colors.append(assign)
+        elif i == "LPG":
+            assign = '#A3B825'
+            colors.append(assign)
+        elif i == "Sum K.F.S":
+            assign = '#5499C7'
+            colors.append(assign)
+        elif i == "Sum Gas":
+            assign = '#CD6155'
+            colors.append(assign)
+        elif i == "Fuel Oil":
+            assign = '#52BE80'
+            colors.append(assign)
+    print("Colors :", colors)
+    return colors
+
+
+def chart(value, index, color=None):
     plt.figure(figsize=(12, 9))
-    plt.pie(x=x, labels=label, colors=color, labeldistance=None,
+    plt.pie(x=value, labels=index, colors=color, labeldistance=None,
             # explode=explode2,
-            pctdistance=0.65,
+            pctdistance=0.85,
             autopct='%2.0f%%', shadow=False, startangle=-0, counterclock=False, frame=False,
-            wedgeprops={'linewidth': 1, 'edgecolor': 'white'},
+            wedgeprops={'linewidth': 2, 'edgecolor': 'white'},
             textprops={'fontsize': 27, 'color': 'black'}
             # center=(1.2,1.2)
             )
-    plt.show()
+    circle = plt.Circle((0, 0), 0.7, color='white')
+    p = plt.gcf()
+    p.gca().add_artist(circle)
+    plt.axis('equal')
 
 
-def simplified_dataframe(dataframe: DataFrame):
-    dict_ = {}
-    for i in dataframe.index:
-        if i == "Solar Water Heater":
-            dict_[i] = dataframe.loc[i]
-            dataframe.drop(axis=0, labels=i, inplace=True)
-        elif i == "Fuelwood & charcoal":
-            dict_[i] = dataframe.loc[i]
-            dataframe.drop(axis=0, labels=i, inplace=True)
-        elif i == "Kerosene":
-            dict_[i] = dataframe.loc[i]
-            dataframe.drop(axis=0, labels=i, inplace=True)
-    dict_df = pd.DataFrame(dict_).T
-    somme = dict_df.iloc[:].sum(axis=0)
-    # # print("Somme dictionnaire:", somme)
-    # # new DataFrame
-    new_df = pd.concat([dataframe, somme], axis=0)
-    print(new_df)
-    print(dict_df)
-    print(somme)
-   # return new_df
+# ----------------- CONFIG DATA for ring chart ----------------- #
 
-
-
+SECTORS = ['Residential', 'Service', 'Industry', 'Road Transportation']
+index_global, energy_global = create_data_sector(SECTORS)        # call of function
 
 # call data in for loop
 for energy, label in enumerate(index_global):
     en_sector = energy_global[energy]
-    # chart(en_sector, label)
     n_df = pd.DataFrame(en_sector, columns=['Value'], index=label)
-    sorted_n_df = n_df.sort_values(by='Value', ascending=False)
-    print(sorted_n_df)
-    simplified_dataframe(sorted_n_df)
+    simplified_df = simplified_dataframe(n_df)
+    sorted_simplified_df = simplified_df.sort_values(by=['Value'], axis=0, ascending=False)
+    # PRINT DATA
+    print(SECTORS[energy], "Sector :")
+    print(sorted_simplified_df)
+    colors = assign_color(sorted_simplified_df)
+    print()
+    # CHART
+    chart(sorted_simplified_df['Value'], sorted_simplified_df.index, colors)
+    plt.savefig(f'RingChart_{SECTORS[energy]}_2021.png', transparent=True, dpi=300)
 
-
-
-
-
-
-#chart(energy_global, index_global)
-
-    #modifier chart avec boucle for pour obtenir energy et label separement
+plt.show()
