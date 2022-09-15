@@ -57,7 +57,7 @@ colors1 = ['#00b386', '#269393', '#42a1a1', '#67b3b3', '#bbdddd', '#ffffff', '#f
 explode1 = (0.001, 0.01, 0.01, 0.01, 0.01, 0.01, 0.1)
 label_dist1 = 1.1
 wedges1 = {'linewidth': 1, 'edgecolor': 'white'}
-text1 = {'fontsize': 13, 'color': 'black'}
+text1 = {'fontsize': 18, 'color': 'black'}
 
 # 2nd data pie chart [ Sorted DATA for obtain chart descending ]
 # data (2nd Chart)
@@ -86,12 +86,12 @@ subplot2 = chart_2.pie_chart(value_chart2, label_print_chart2, colors2, explode2
 
 # ------- Function Text ------- #
 
-print_text(-2.9, -0.4, str(energy_glob[0]) + "\n" + f"({str(round(share_percent[0]))}%)", 20, "black", "top", "center")
-print_text(-3.6, 0.25, str(energy_glob[1]) + "\n" + f"({str(round(share_percent[1]))}%)", 20, "black", "top", "center")
-print_text(-2.95, 0.7, str(energy_glob[2]) + "\n" + f"({str(round(share_percent[2]))}%)", 20, "black", "top", "center")
-print_text(0.1, -0.35, str(energy_glob[6]) + "\n" + f"({str(share_percent[6])}%)", 22, "black", "top", "center")
-print_text(-0.45, 0.4, str(energy_glob[7]) + "\n" + f"({str(share_percent[7])}%)", 20, "black", "top", "center")
-print_text(0.45, 0.6, str(energy_glob[8]) + "\n" + f"({str(share_percent[8])}%)", 20, "black", "top", "center")
+print_text(-2.9, -0.4, str(energy_glob[0]) + "\n" + f"({str(round(share_percent[0]))}%)", 26, "black", "top", "center")
+print_text(-3.6, 0.25, str(energy_glob[1]) + "\n" + f"({str(round(share_percent[1]))}%)", 24, "black", "top", "center")
+print_text(-2.95, 0.75, str(energy_glob[2]) + "\n" + f"({str(round(share_percent[2]))}%)", 26, "black", "top", "center")
+print_text(0.1, -0.35, str(energy_glob[6]) + "\n" + f"({str(share_percent[6])}%)", 30, "black", "top", "center")
+print_text(-0.45, 0.4, str(energy_glob[7]) + "\n" + f"({str(share_percent[7])}%)", 27, "black", "top", "center")
+print_text(0.45, 0.6, str(energy_glob[8]) + "\n" + f"({str(share_percent[8])}%)", 22, "black", "top", "center")
 
 # ------- Print Chart------- #
 

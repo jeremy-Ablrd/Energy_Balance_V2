@@ -91,11 +91,11 @@ subplot2 = chart_2.pie_chart(value_chart2, label_print_chart2, colors2, explode2
 
 # ------- Function Text ------- #
 
-print_text(-3.02, -0.4, str(energy_glob[0]) + "\n" + f"({str(round(share_percent[0]))}%)", 20, "black", "top", "center")
-print_text(-3.4, 0.6, str(energy_glob[1]) + "\n" + f"({str(round(share_percent[1]))}%)", 20, "black", "top", "center")
-print_text(-2.5, 0.55, str(energy_glob[2]) + "\n" + f"({str(round(share_percent[2]))}%)", 17, "black", "top", "center")
-print_text(-0.4, 0.45, str(energy_glob[5]) + "\n" + f"({str(share_percent[5])}%)", 20, "black", "top", "center")
-print_text(0.05, -0.4, str(energy_glob[6]) + "\n" + f"({str(share_percent[6])}%)", 20, "black", "top", "center")
+print_text(-3.02, -0.4, str(energy_glob[0]) + "\n" + f"({str(round(share_percent[0]))}%)", 30, "black", "top", "center")
+print_text(-3.3, 0.6, str(energy_glob[1]) + "\n" + f"({str(round(share_percent[1]))}%)", 30, "black", "top", "center")
+print_text(-2.5, 0.55, str(energy_glob[2]) + "\n" + f"({str(round(share_percent[2]))}%)", 18, "black", "top", "center")
+print_text(-0.4, 0.45, str(energy_glob[5]) + "\n" + f"({str(share_percent[5])}%)", 27, "black", "top", "center")
+print_text(0.05, -0.4, str(energy_glob[6]) + "\n" + f"({str(share_percent[6])}%)", 27, "black", "top", "center")
 
 # ------- Print Chart------- #
 
