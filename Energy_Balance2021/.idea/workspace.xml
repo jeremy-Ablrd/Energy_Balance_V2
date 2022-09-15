@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b09f32f-c938-40a9-912b-42516c46464d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Transport_2019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Transport_2020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Energy_Balance2021.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RingChart/RingChart_Transport_2021.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/BarChart/Bar_ Chart_Sectorial_Consumption.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/BarChart/Bar_ Chart_Sectorial_Consumption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/PieChart/Code_exe_ElecGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/PieChart/Code_exe_ElecGen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/PieChart/Code_exe_FEC.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/PieChart/Code_exe_FEC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/PieChart/Code_exe_keyfigure.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/PieChart/Code_exe_keyfigure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Industry_2021.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Industry_2019.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Residential_2021.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Residential_2019.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Road Transportation_2021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Service_2021.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Service_2019.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/Ringchart_Global.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/Ringchart_Global.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/file.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/ring_chart_INDUST.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/ring_chart_RESIDEN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/ring_chart_SERVICE.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/ring_chart_TRANSP1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/test_ring_Function.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/BarChart/Bar_ Chart_Sectorial_Consumption.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/BarChart/Bar_ Chart_Sectorial_Consumption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Industry_2021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Residential_2021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Road Transportation_2021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Service_2021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/Ringchart_Global.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/Ringchart_Global.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/file.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/ring_chart_INDUST.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/ring_chart_RESIDEN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/ring_chart_SERVICE.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/ring_chart_TRANSP1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/test_ring_Function.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarChart/Bar_ Chart_Sectorial_Consumption.py" beforeDir="false" afterPath="$PROJECT_DIR$/BarChart/Bar_ Chart_Sectorial_Consumption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/RingChart_Road Transportation_2021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/Ringchart_Global.py" beforeDir="false" afterPath="$PROJECT_DIR$/RingChart/Ringchart_Global.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/file.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/ring_chart_INDUST.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/ring_chart_RESIDEN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/ring_chart_SERVICE.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/ring_chart_TRANSP1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RingChart/test_ring_Function.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/BarChart/Bar_ Chart_Sectorial_Consumption.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/RingChart/Ringchart_Global.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2En9Pzlqm1G9Sb7b83ch8tikhm9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.Bar_ Chart_Sectorial_Consumption">
+    <configuration name="Bar_ Chart_Sectorial_Consumption" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Energy_Balance2021" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BarChart" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BarChart/Bar_ Chart_Sectorial_Consumption.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Ringchart_Global" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Energy_Balance2021" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RingChart" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RingChart/Ringchart_Global.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Bar_ Chart_Sectorial_Consumption" />
+        <item itemvalue="Python.Ringchart_Global" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b09f32f-c938-40a9-912b-42516c46464d" name="Changes" comment="" />
+      <created>1663220461599</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663220461599</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

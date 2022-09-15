@@ -28,9 +28,10 @@ share_percent = np.array(share_percent)
 # ------------- CONFIG DATA FOR CHART ------------- #
 
 # Config chart
-colors_share = ['Teal', '#42a1a1', '#a3b825','#fad335']
+colors_share = ['Teal', '#42a1a1', '#a3b825', '#fad335']
 gap = (0, 0, 0.1, 0.1)
-print(share_percent)
+
+print(list(zip(energy, share_percent)))
 
 # ---------------- CALL FUNCTION ---------------- #
 

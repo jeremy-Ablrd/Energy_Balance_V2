@@ -31,8 +31,8 @@ share_percent = np.array(share_percent)
 # Config data
 energy_key = ['Fuel Oil', energy[2], energy[3]]
 value_percent = [share_percent[0] + share_percent[1], share_percent[2], share_percent[3]]
-print(energy_key)
-print(value_percent)
+
+print(list(zip(energy_key, value_percent)))
 
 # Config pie chart
 colors_share = ['Teal', '#a3b825', '#fad335']

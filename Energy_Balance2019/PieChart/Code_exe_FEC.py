@@ -47,6 +47,9 @@ energy1 = energy_glob[0:6]
 label_print_chart1 = ['', '', '', f'{energy1[3]}({share_percent[3]}%)', f'{energy1[4]}({share_percent[4]}%)',
                       f'{energy1[5]}({share_percent[5]}%)', '']
 value_percent1 = np.append(share_percent[0:6], sum(share_percent[6:11]))
+
+print()
+print("1st Chart :")
 print(list(zip(energy1.tolist(), value_percent1)))
 
 # config (1st Chart)
@@ -62,6 +65,8 @@ energy2 = energy_glob[6:10]
 label_print_chart2 = ['', '', '', f'{energy2[9]}({share_percent[9]}%)']
 value_chart2 = value_energy[6:10]
 
+print()
+print("2nd Chart :")
 print(list(zip(energy2.tolist(), new_df['Share %'][6:10].tolist())))
 
 # config (2nd Chart)

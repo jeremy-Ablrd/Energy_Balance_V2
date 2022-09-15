@@ -22,18 +22,15 @@ rename_columns = df.rename(columns={'Prod. (+)                 Cons. (-)': 'Elec
 
 
 # ----------------- ALL FUNCTION ----------------- #
-def create_data_sector(sectors: list,):
+
+def create_data_sector(dataframe: DataFrame, sectors: list):
     # Drop NaN rows and take only values
     index_series = []
     list_series = []
     for sector in sectors:
-        series = df.loc[sector].dropna(axis=0)      # delete value NaN
-        index_ = []
-        list_ = []
-        for index in series.index:
-            index_.append(index)
-        for values in series:
-            list_.append(values)
+        series = dataframe.loc[sector].dropna(axis=0)      # delete value NaN
+        index_ = [index for index in series.index]
+        list_ = [values for values in series]
         index_series.append(index_)
         list_series.append(value_percent(list_))
     return index_series, list_series
@@ -85,25 +82,25 @@ def simplified_dataframe(dataframe: DataFrame):
 
 
 def assign_color(dataframe: DataFrame):
-    colors = []
+    color = []
     for i in dataframe.index:
         if i == "Electricity":
             assign = '#F1C40F'
-            colors.append(assign)
+            color.append(assign)
         elif i == "LPG":
             assign = '#A3B825'
-            colors.append(assign)
+            color.append(assign)
         elif i == "Sum K.F.S":
             assign = '#5499C7'
-            colors.append(assign)
+            color.append(assign)
         elif i == "Sum Gas":
             assign = '#CD6155'
-            colors.append(assign)
+            color.append(assign)
         elif i == "Fuel Oil":
             assign = '#52BE80'
-            colors.append(assign)
-    print("Colors :", colors)
-    return colors
+            color.append(assign)
+    print("Colors :", color)
+    return color
 
 
 def chart(value, index, color=None):
@@ -124,8 +121,8 @@ def chart(value, index, color=None):
 
 # ----------------- CONFIG DATA for ring chart ----------------- #
 
-SECTORS = ['Residential', 'Service', 'Industry', 'Road Transportation']
-index_global, energy_global = create_data_sector(SECTORS)        # call of function
+SECTORS = ['Residential', 'Service', 'Industry', ]
+index_global, energy_global = create_data_sector(df, SECTORS)        # call of function
 
 # call data in for loop
 for energy, label in enumerate(index_global):
@@ -140,6 +137,6 @@ for energy, label in enumerate(index_global):
     print()
     # CHART
     chart(sorted_simplified_df['Value'], sorted_simplified_df.index, colors)
-    plt.savefig(f'RingChart_{SECTORS[energy]}_2021.png', transparent=True, dpi=300)
+    plt.savefig(f'RingChart_{SECTORS[energy]}_2020.png', transparent=True, dpi=300)
 
 plt.show()
