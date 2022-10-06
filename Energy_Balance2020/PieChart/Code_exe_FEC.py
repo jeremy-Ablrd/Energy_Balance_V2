@@ -54,7 +54,7 @@ colors1 = ['#00b386', '#269393', '#42a1a1', '#67b3b3', '#bbdddd', '#ffffff', '#f
 explode1 = (0.001, 0.01, 0.01, 0.01, 0.01, 0.01, 0.1)
 label_dist1 = 1.1
 wedges1 = {'linewidth': 1, 'edgecolor': 'white'}
-text1 = {'fontsize': 13, 'color': 'black'}
+text1 = {'fontsize': 17, 'color': 'black'}
 
 # 2nd data pie chart [ Sorted DATA for obtain chart descending ]
 # data (2nd Chart)

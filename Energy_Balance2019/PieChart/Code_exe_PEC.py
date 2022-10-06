@@ -1,11 +1,13 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from Function_PieChart_Electricity_Gen import *
+from matplotlib import patches
+
 from Function_PieChart_PEC_FEC import *
 
 # -------  Config for PRIMARY ENERGY CONSUMPTION ------- #
 
-# Read .xlsx (excel file) ; sheet_name = "Energy Balance-2021"
+# Read .xlsx (excel file) ; sheet_name = "Energy Balance-2019"
 path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2019/Seychelles Energy Balance For 2019 - ver4.xlsx"
 file = pd.read_excel(path, sheet_name="Energy Balance-2019", header=43)
 
@@ -82,22 +84,32 @@ wedges2 = {'linewidth': 1, 'edgecolor': 'white'}
 text2 = {'fontsize': 12, 'color': 'black'}
 
 # ------- Function Chart ------- #
-
-fig = figure(20, 9)
+# sur la même figure
+figure(20, 9)
 chart_1 = Chart(1, 2, 1)                # get subplot chart1 by Class (inside other .py)
 chart_2 = Chart(1, 2, 2)                # get subplot chart2 by Class (inside other .py)
 subplot1 = chart_1.pie_chart(value_percent1, label_print_chart1, colors1, explode1, label_dist1, wedges1, text1)
 subplot2 = chart_2.pie_chart(value_chart2, label_print_chart2, colors2, explode2, label_dist1, wedges1, text1)
 
+
+plt.Rectangle((-3, -0.4), 0.31, 0.48, color='b')
+
 # ------- Function Text ------- #
 
-print_text(-3.02, -0.4, str(energy_glob[0]) + "\n" + f"({str(round(share_percent[0]))}%)", 30, "black", "top", "center")
-print_text(-3.4, 0.6, str(energy_glob[1]) + "\n" + f"({str(round(share_percent[1]))}%)", 30, "black", "top", "center")
-print_text(-2.5, 0.55, str(energy_glob[2]) + "\n" + f"({str(round(share_percent[2]))}%)", 20, "black", "top", "center")
-print_text(-0.4, 0.6, str(energy_glob[5]) + "\n" + f"({str(share_percent[5])}%)", 30, "black", "top", "center")
-print_text(0.05, -0.4, str(energy_glob[6]) + "\n" + f"({str(share_percent[6])}%)", 30, "black", "top", "center")
+config_text = (
+    (-3.02, -0.4, str(energy_glob[0]) + "\n" + f"({str(round(share_percent[0]))}%)", 30, "black", "top", "center"),
+    (-3.4, 0.6, str(energy_glob[1]) + "\n" + f"({str(round(share_percent[1]))}%)", 30, "black", "top", "center"),
+    (-2.5, 0.55, str(energy_glob[2]) + "\n" + f"({str(round(share_percent[2]))}%)", 20, "black", "top", "center"),
+    (-0.4, 0.6, str(energy_glob[5]) + "\n" + f"({str(share_percent[5])}%)", 30, "black", "top", "center"),
+    (0.05, -0.4, str(energy_glob[6]) + "\n" + f"({str(share_percent[6])}%)", 30, "black", "top", "center"),
+              )
+
+for i in config_text:
+    txt1 = Affichertext(i)
+    txt1.print_text()
+
 
 # ------- Print Chart------- #
 
-plt.savefig('PEC2019.png', transparent=True, dpi=300)
+# plt.savefig('PEC2019.png', transparent=True, dpi=300)
 plt.show()

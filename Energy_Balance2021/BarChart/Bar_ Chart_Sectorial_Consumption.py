@@ -57,7 +57,7 @@ def dataframe_transportation(df: DataFrame):
 
 def funct_barh(title, share, colors):
     # --------- Figure --------- #
-    fig = plt.figure(figsize=(20, 4))
+    fig = plt.figure(figsize=(12, 4))
     ax = fig.add_subplot(111)
 
     # ----------- Chart ----------- #
@@ -69,7 +69,7 @@ def funct_barh(title, share, colors):
 
     ax.xaxis.set_visible(False)
     ax.xaxis.set_ticks_position('top')
-    ax.tick_params(labelsize=15, length=0)
+    ax.tick_params(labelsize=20, length=0)
 
     ax.xaxis.set_tick_params(pad=5)
     ax.yaxis.set_tick_params(pad=10)
@@ -80,12 +80,12 @@ def funct_barh(title, share, colors):
 
     ax.invert_yaxis()
     for a in ax.patches[:-1]:
-        plt.text(a.get_width() - 3, a.get_y() + 0.46,
+        plt.text(a.get_width() - 4, a.get_y() + 0.46,
                  s=str(round((a.get_width()), 2)) + '%',
                  fontsize=15, fontweight='bold',
                  color='black')
     for a in ax.patches[4:5]:
-        plt.text(a.get_width() - 2.1, a.get_y() + 0.46,
+        plt.text(a.get_width(), a.get_y() + 0.46,
                  s=str(round((a.get_width()), 2)) + '%',
                  fontsize=15, fontweight='bold',
                  color='black')
@@ -99,7 +99,7 @@ def chart(value, index, color=None):
             pctdistance=0.85,
             autopct='%2.0f%%', shadow=False, startangle=-0, counterclock=False, frame=False,
             wedgeprops={'linewidth': 2, 'edgecolor': 'white'},
-            textprops={'fontsize': 27, 'color': 'black'}
+            textprops={'fontsize': 27, 'color': 'white'}
             # center=(1.2,1.2)
             )
     circle = plt.Circle((0, 0), 0.7, color='white')

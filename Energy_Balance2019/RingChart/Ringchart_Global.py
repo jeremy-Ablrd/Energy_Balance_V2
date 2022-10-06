@@ -12,8 +12,8 @@ import pandas as pd
 # Call file
 from pandas import DataFrame
 
-path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2021/Seychelles Energy Balance For 2021 - ver2 2.xlsx"
-file = pd.read_excel(path, sheet_name="Energy Balance-2021", header=2, index_col=0)
+path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2019/Seychelles Energy Balance For 2019 - ver4.xlsx"
+file = pd.read_excel(path, sheet_name="Energy Balance-2019", header=2, index_col=0)
 
 # Set file and pre-treatment of Dataframe, create data frame.
 df = file.iloc[25:36, 0:13]

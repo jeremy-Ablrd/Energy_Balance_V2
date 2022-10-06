@@ -23,12 +23,7 @@ label_dist = 1.1
 wedge = {'linewidth': 1, 'edgecolor': 'white'}
 text = {'fontsize': 13, 'color': 'black'}
 
-values_percent = []
-for data in generation:
-    operation = round((data/sum(generation)) * 100, 1)
-    values_percent.append(operation)
 
-print(list(zip(sectors, values_percent)))
 
 # ------- GENERATE GRAPHIQUE ------- #
 

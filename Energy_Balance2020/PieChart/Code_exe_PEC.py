@@ -42,7 +42,7 @@ colors1 = ['Teal', '#269393', '#42a1a1', '#67b3b3', '#bbdddd', '#ffa600']
 explode1 = (0.001, 0.01, 0.01, 0.01, 0.01, 0.1)
 label_dist1 = 1.1
 wedges1 = {'linewidth': 1, 'edgecolor': 'white'}
-text1 = {'fontsize': 13, 'color': 'black'}
+text1 = {'fontsize': 17, 'color': 'black'}
 
 # 2nd data pie chart [ Sorted DATA for obtain chart descending ]
 # Creating a new DataFrame sorted for print chart ascending
@@ -79,7 +79,7 @@ colors2 = ['#ffa600', '#ffb833', '#ffc966', '#ffd280', '#ffdb99', '#ffedcc']
 explode2 = (0.001, 0.01, 0.01, 0.01, 0.01, 0.01)
 label_dist2 = 1.05
 wedges2 = {'linewidth': 1, 'edgecolor': 'white'}
-text2 = {'fontsize': 12, 'color': 'black'}
+text2 = {'fontsize': 17, 'color': 'black'}
 
 # ------- Function Chart ------- #
 
