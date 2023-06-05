@@ -1,73 +1,71 @@
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from pandas import DataFrame
 
+"""Information importante :
+Ce dataframe correspond aux données sur la consommation d'énergie dans différent secteur.
+Il y a deux types de graphiques qui est générés dans ce code :
+- sur les données sectorial en barre horizontale,
+- sur les données selon le type de transport en anneau. 
+  Les noms pour chaque ne sont pas visibles, l'ordre (de haut en bas) est la même que celui du dataframe.
+"""
+
 # ------- BAR CHART FOR ENERGY SECTORIAL CONSUMPTION ------- #
+filename = "Seychelles Energy Balance For 2020 - ver3.xlsx"             # nom du fichier excel
+excel_sheet_name = "Energy Balance-2020"        # nom de la feuille de calcule
+position_line_header = 99                       # numéro de la ligne de l'entête du tableau
+nb_rows = 8                                     # nombre de lignes sans compter l'entête
+nb_cols = 3                                     # nombre de colonnes
 
-# Read .xlsx (excel file) ; sheet_name = "Electricity Stat-2021"
-path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2020/Seychelles Energy Balance For 2020 - ver2.xlsx"
-file = pd.read_excel(path, sheet_name="Energy Balance-2020", header=98)             # Already DataFrame by pandas
+colors_bar_chart = ['#52A8A8', '#00b386', '#A3B825', '#D1C420', '#ff8c00']            # correspond aux couleurs associer au graphique à barre horizontale
+colors_pie_chart = ['#494f56', '#018080', '#2b489d']                                  # correspond aux couleurs associer au graphique en camembert pour le secteur du transport
+
+filename_bar_chart = 'Sectorial_Consump_2020'                              # nom du fichier de sauvegarde ; les espaces sont à éviter, mettre des "_" à la place.
+filename_pie_chart = 'RingChart_Transport_2020'
 
 
-def dataframe_barh(df: DataFrame):
+def make_dataframe(df: DataFrame, bar_h=True):
     # Rename index
     n_index = []
     for i in range(0, len(df)):
         n_index.append(i)
     df.index = n_index
-    print(df)
+    print("Dataframe Sectorial : \n", df)
 
-    # Share in % values
     share_percent = []
-    for i in df['Share']:
-        share_percent.append(round(i*100, 1))
+    if bar_h:
+        # Share in % values
+        for i in df['Share']:
+            share_percent.append(round(i*100, 1))
+        label = df['SECTOR'].str.lower().str.title()  # str.lower()/upper()/title() change the letter minuscule, capital...
+    else:
+        for i in df['TOE'][1:4]:
+            operation = (i / df['TOE'][0]) * 100
+            share_percent.append(round(operation, 1))
+        label = df['SECTOR'][1:4]
+
     share_percent = np.array(share_percent)
-
-    # ------- Data chart parameters ------- #
-
-    label_ = df['SECTOR'].str.lower().str.title()      # str.lower()/upper()/title() change the letter minuscule, capital...
-    data_ = share_percent
-    colors_ = ['#52A8A8', '#00b386', '#A3B825', '#D1C420', '#ff8c00']
-    print(list(zip(label_, share_percent)))
-    return label_, data_, colors_
+    print(list(zip(label, share_percent)))
+    return label, share_percent
 
 
-def dataframe_transportation(df: DataFrame):
-    # Rename index
-    n_index = []
-    for i in range(0, len(df)):
-        n_index.append(i)
-    df.index = n_index
-    print(df)
-
-    # Share in % values
-    share_percent = []
-    for i in df['TOE'][1:4]:
-        operation = (i / df['TOE'][0]) * 100
-        share_percent.append(round(operation, 1))
-    share_percent = np.array(share_percent)
-
-    label_ = df['SECTOR'][1:4]
-    data_ = share_percent
-    colors_ = ['#494f56', '#018080', '#2b489d']
-    print(list(zip(label_, share_percent)))
-    return label_, data_, colors_
-
-
-def funct_barh(title, share, colors):
-    # --------- Figure --------- #
+def generate_bar_h(sector_name, share, colors):
+    global filename_bar_chart
+    # --------- Création de la Figure --------- #
     fig = plt.figure(figsize=(12, 4))
     ax = fig.add_subplot(111)
 
-    # ----------- Chart ----------- #
-    plt.barh(title, width=share, height=0.6, color=colors)
+    # ----------- création du graphique ----------- #
+    plt.barh(sector_name, width=share, height=0.6, color=colors)
 
     # ----------- AXE CONFIGURATION ----------- #
-    for s in ['top', 'bottom', 'left', 'right']:
-        ax.spines[s].set_visible(False)
+    for side in ['top', 'bottom', 'left', 'right']:
+        ax.spines[side].set_visible(False)
 
     ax.xaxis.set_visible(False)
+    ax.yaxis.set_visible(False)
     ax.xaxis.set_ticks_position('top')
     ax.tick_params(labelsize=20, length=0)
 
@@ -89,12 +87,14 @@ def funct_barh(title, share, colors):
                  s=str(round((a.get_width()), 2)) + '%',
                  fontsize=15, fontweight='bold',
                  color='black')
-    plt.savefig('Sectorial_Consump2020.png', transparent=True, dpi=300)
+
+    # ----------- sauvegarde et affichage ----------- #
+    plt.savefig(filename_bar_chart + '.png', transparent=True, dpi=300)
 
 
-def chart(value, index, color=None):
+def chart(name, value, color=None):
     plt.figure(figsize=(12, 9))
-    plt.pie(x=value, labels=index, colors=color, labeldistance=None,
+    plt.pie(x=value, labels=name, colors=color, labeldistance=None,
             # explode=explode2,
             pctdistance=0.85,
             autopct='%2.0f%%', shadow=False, startangle=-0, counterclock=False, frame=False,
@@ -106,22 +106,31 @@ def chart(value, index, color=None):
     p = plt.gcf()
     p.gca().add_artist(circle)
     plt.axis('equal')
-    path_savefig = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2020/RingChart"
-    plt.savefig(f'{path_savefig}/RingChart_Transport_2020.png', transparent=True, dpi=300)
+    plt.savefig(filename_pie_chart + '.png', transparent=True, dpi=300)
 
 
-# Create DataFrame (manuel parameters)
-dataframe = file.iloc[0:8, 0:3]
-df_barh = dataframe.drop([1, 2, 3], axis=0)
+# ---- PROGRAMME PRINCIPALE ---- #
+path = f"../{filename}"
+file = pd.read_excel(path, sheet_name=excel_sheet_name, header=position_line_header-1)
+
+dataframe = file.iloc[0:nb_rows, 0:nb_cols]
+print("Entire DataFrame : \n", dataframe)
+print()
+
+df_bar_h = dataframe.drop([1, 2, 3], axis=0)
+
 df_transport = dataframe.iloc[0:4]
-print(df_transport)
+print("DataFrame only for Transport sector : \n", df_transport)
+print()
 
-total = file.loc[8][0:3]
+total = file.loc[nb_rows][0:nb_cols]
+print("TOTAL : \n", total)
+print()
 
-label1, data1, colors1 = dataframe_barh(df_barh)
-funct_barh(label1, data1, colors1)
 
-label2, data2, colors2 = dataframe_transportation(df_transport)
-chart(data2, label2, colors2)
+label1, data1 = make_dataframe(df_bar_h)
+generate_bar_h(label1, data1, colors_bar_chart)
 
+label2, data2 = make_dataframe(df_transport, False)
+chart(label2, data2, colors_pie_chart)
 plt.show()

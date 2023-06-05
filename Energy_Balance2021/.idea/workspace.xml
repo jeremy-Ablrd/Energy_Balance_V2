@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b09f32f-c938-40a9-912b-42516c46464d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Industry_2019.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Industry_2019.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Residential_2019.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Residential_2019.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Service_2019.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/RingChart_Service_2019.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/Ringchart_Global.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2019/RingChart/Ringchart_Global.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_ElecCons.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_ElecCons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_ElecGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_ElecGen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_FEC.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_FEC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_PEC.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/Code_exe_PEC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/FEC2020.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/FEC2020.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/PEC2020.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/PieChart/PEC2020.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Industry_2020.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Industry_2020.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Residential_2020.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Residential_2020.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Service_2020.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/RingChart_Service_2020.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/Ringchart_Global.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Energy_Balance2020/RingChart/Ringchart_Global.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BarChart/Bar_ Chart_Sectorial_Consumption.py" beforeDir="false" afterPath="$PROJECT_DIR$/BarChart/Bar_ Chart_Sectorial_Consumption.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BarChart/Sectorial_Consump2021.png" beforeDir="false" afterPath="$PROJECT_DIR$/BarChart/Sectorial_Consump2021.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PieChart/Code_exe_ElecCons.py" beforeDir="false" afterPath="$PROJECT_DIR$/PieChart/Code_exe_ElecCons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PieChart/Code_exe_FEC.py" beforeDir="false" afterPath="$PROJECT_DIR$/PieChart/Code_exe_FEC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PieChart/Code_exe_PEC.py" beforeDir="false" afterPath="$PROJECT_DIR$/PieChart/Code_exe_PEC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PieChart/FEC2021.png" beforeDir="false" afterPath="$PROJECT_DIR$/PieChart/FEC2021.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PieChart/PEC2021.png" beforeDir="false" afterPath="$PROJECT_DIR$/PieChart/PEC2021.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RingChart/RingChart_Transport_2021.png" beforeDir="false" afterPath="$PROJECT_DIR$/RingChart/RingChart_Transport_2021.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,15 +32,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2021&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/jerem/Desktop/Chart_spreadsheet"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.Code_exe_ElecCons">
     <configuration name="Bar_ Chart_Sectorial_Consumption" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Energy_Balance2021" />
