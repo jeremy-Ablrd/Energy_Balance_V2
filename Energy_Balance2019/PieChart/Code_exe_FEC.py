@@ -5,12 +5,18 @@ from Function_PieChart_PEC_FEC import *
 
 # -------  Config for FINAL ENERGY CONSUMPTION ------- #
 
-# Read .xlsx (excel file) ; sheet_name = "Energy Balance-2019"
-path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2019/Seychelles Energy Balance For 2019 - ver4.xlsx"
-file = pd.read_excel(path, sheet_name="Energy Balance-2019", header=70)
+filename = "Seychelles Energy Balance For 2019 - ver5.xlsx"     # nom du fichier excel
+excel_sheet_name = "Energy Balance-2019"        # nom de la feuille de calcule
+position_line_header = 71                       # numéro de la ligne de l'entête du tableau
+nb_rows = 10                                    # nombre de lignes sans compter l'entête
+nb_cols = 3                                     # nombre de colonnes
 
-# create Dataframe "df" for the concerned table [FINAL ENERGY CONSUMPTION (FEC)]
-df = file.iloc[0:10, 0:3]
+path = f"../{filename}"
+file = pd.read_excel(path, sheet_name=excel_sheet_name, header=position_line_header-1)
+
+# donnée tableau "FINAL ENERGY CONSUMPTION (FEC)"
+df = file.iloc[0:nb_rows, 0:nb_cols]
+print(df)
 
 # -------------- Sorted DataFrame descending -------------- #
 df_sorted = df.sort_values('TOE', ascending=False)
@@ -95,5 +101,5 @@ print_text(0.45, 0.6, str(energy_glob[8]) + "\n" + f"({str(share_percent[8])}%)"
 
 # ------- Print Chart------- #
 
-plt.savefig('FEC2019.png', transparent=True, dpi=300)
+plt.savefig('Figure_FEC_2019.png', transparent=True, dpi=300)
 plt.show()

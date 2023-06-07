@@ -7,8 +7,7 @@ from Function_PieChart_PEC_FEC import *
 
 # -------  Config for PRIMARY ENERGY CONSUMPTION ------- #
 
-# Read .xlsx (excel file) ; sheet_name = "Energy Balance-2019"
-path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2019/Seychelles Energy Balance For 2019 - ver4.xlsx"
+path = "../Seychelles Energy Balance For 2019 - ver5.xlsx"
 file = pd.read_excel(path, sheet_name="Energy Balance-2019", header=43)
 
 # create Dataframe "df" for the concerned table [PRIMARY ENERGY CONSUMPTION (PEC)]
@@ -111,5 +110,5 @@ for i in config_text:
 
 # ------- Print Chart------- #
 
-# plt.savefig('PEC2019.png', transparent=True, dpi=300)
+plt.savefig('Figure_PEC_2019.png', transparent=True, dpi=300)
 plt.show()

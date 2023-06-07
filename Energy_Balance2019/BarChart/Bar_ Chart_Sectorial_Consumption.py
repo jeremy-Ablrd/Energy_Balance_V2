@@ -110,7 +110,6 @@ def chart(name, value, color=None):
 
 
 # ---- PROGRAMME PRINCIPALE ---- #
-absolute_path = os.getcwd()
 path = f"../{filename}"
 file = pd.read_excel(path, sheet_name=excel_sheet_name, header=position_line_header-1)
 
