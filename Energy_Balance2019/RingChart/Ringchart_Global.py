@@ -12,7 +12,7 @@ import pandas as pd
 # Call file
 from pandas import DataFrame
 
-path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2019/Seychelles Energy Balance For 2019 - ver4.xlsx"
+path = "../Seychelles Energy Balance For 2019 - ver5.xlsx"
 file = pd.read_excel(path, sheet_name="Energy Balance-2019", header=2, index_col=0)
 
 # Set file and pre-treatment of Dataframe, create data frame.
@@ -48,19 +48,14 @@ def simplified_dataframe(dataframe: DataFrame):
     dict_kfs = {}
     dict_gas = {}
     for i in dataframe.index:
-        if i == "Gasoil":
+        if i in ["Gasoil", "Gasoline"]:
             dict_gas[i] = dataframe.loc[i]
             dataframe.drop(axis=0, labels=i, inplace=True)
-        elif i == "Gasoline":
-            dict_gas[i] = dataframe.loc[i]
-            dataframe.drop(axis=0, labels=i, inplace=True)
-        if i == "Solar Water Heater":
-            dict_kfs[i] = dataframe.loc[i]
-            dataframe.drop(axis=0, labels=i, inplace=True)
-        elif i == "Fuelwood & charcoal":
-            dict_kfs[i] = dataframe.loc[i]
-            dataframe.drop(axis=0, labels=i, inplace=True)
-        elif i == "Kerosene":
+            """ La méthode "drop" ne doit pas être à l'extérieur du "if"
+             sinon il va supprimer tout les éléments du dataframe
+             les éléments de cette condition est supprimé parce que l'on fait une somme de ces valeurs """
+
+        elif i in ["Solar Water Heater", "Fuelwood & charcoal", "Kerosene"]:
             dict_kfs[i] = dataframe.loc[i]
             dataframe.drop(axis=0, labels=i, inplace=True)
 
@@ -72,6 +67,7 @@ def simplified_dataframe(dataframe: DataFrame):
         somme_gas = pd.DataFrame(somme_gas, columns=['Sum Gas']).T
         df_gas = pd.concat([dataframe, somme_gas], join='inner')
         return df_gas
+
     # ------- Sum of solar, fuelwood, Kerosene ------- #
     dict_df2 = pd.DataFrame(dict_kfs).T
     somme_kfs = dict_df2.iloc[:].sum(axis=0)
@@ -82,23 +78,14 @@ def simplified_dataframe(dataframe: DataFrame):
 
 
 def assign_color(dataframe: DataFrame):
-    color = []
-    for i in dataframe.index:
-        if i == "Electricity":
-            assign = '#F1C40F'
-            color.append(assign)
-        elif i == "LPG":
-            assign = '#A3B825'
-            color.append(assign)
-        elif i == "Sum K.F.S":
-            assign = '#5499C7'
-            color.append(assign)
-        elif i == "Sum Gas":
-            assign = '#CD6155'
-            color.append(assign)
-        elif i == "Fuel Oil":
-            assign = '#52BE80'
-            color.append(assign)
+    color_mapping = {
+        "Electricity": "#F1C40F",
+        "LPG": "#A3B825",
+        "Sum K.F.S": "#5499C7",
+        "Sum Gas": "#CD6155",
+        "Fuel Oil": "#52BE80",
+    }
+    color = [color_mapping.get(i) for i in dataframe.index if i in color_mapping]
     print("Colors :", color)
     return color
 
@@ -134,9 +121,7 @@ for energy, label in enumerate(index_global):
     print(SECTORS[energy], "Sector :")
     print(sorted_simplified_df)
     colors = assign_color(sorted_simplified_df)
-    print()
-    # CHART
     chart(sorted_simplified_df['Value'], sorted_simplified_df.index, colors)
-    plt.savefig(f'RingChart_{SECTORS[energy]}_2019.png', transparent=True, dpi=300)
+    plt.savefig(f'Figure_RingChart_{SECTORS[energy]}_2019.png', transparent=True, dpi=300)
 
 plt.show()
