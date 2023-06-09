@@ -6,7 +6,7 @@ from Function_PieChart_PEC_FEC import *
 # -------  Config for PRIMARY ENERGY CONSUMPTION ------- #
 
 # Read .xlsx (excel file) ; sheet_name = "Energy Balance-2020"
-path = "C:/Users/jerem/Desktop/Energy_Balance_V2/Energy_Balance2020/Seychelles Energy Balance For 2020 - ver2.xlsx"
+path = "../Seychelles Energy Balance For 2020 - ver3.xlsx"
 file = pd.read_excel(path, sheet_name="Energy Balance-2020", header=43)
 
 # create Dataframe "df" for the concerned table [PRIMARY ENERGY CONSUMPTION (PEC)]
@@ -99,5 +99,5 @@ print_text(0.05, -0.4, str(energy_glob[6]) + "\n" + f"({str(share_percent[6])}%)
 
 # ------- Print Chart------- #
 
-plt.savefig('PEC2020.png', transparent=True, dpi=300)
+plt.savefig('Figure_PEC_2020.png', transparent=True, dpi=300)
 plt.show()
